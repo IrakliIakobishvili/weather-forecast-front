@@ -1,0 +1,12 @@
+<div class="minute_cont">
+    <h3>Minute Weather Forecast</h3>
+    <ul class="minute_list">
+        <li class="minute_item" *ngFor="let item of items">
+            <div>{{item.time | timeExtract}}</div>
+            <div class="weather_icon">
+                <img [src]="'../../../../../assets/images/weather_icons/' + (item.values.weatherCode | weatherIcon) + '.png'" [alt]="(item.values.weatherCode | weatherByCode)">
+            </div>
+            <div class="degrees">{{item.values.temperature}} &deg;</div>
+        </li>
+    </ul>
+</div>

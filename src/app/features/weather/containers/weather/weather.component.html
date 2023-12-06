@@ -1,0 +1,21 @@
+<div class="weather_container">
+    <div class="wrapper">
+        <div class="sidebar">
+            <wf-search (searchValue)="searchCityWeather($event)"></wf-search>
+            <div class="city">{{current.context.data.location.name}}</div>
+            <div class="current_weather" *ngIf="current.context.currentDate">
+                <img [src]="'../../../../../assets/images/weather_icons/' + (current.context.currentDate.values?.weatherCodeMin | weatherIcon) + '.png'" [alt]="(current.context.currentDate.values?.weatherCodeMin | weatherByCode)">
+                <span class="degrees">{{current.context.currentDate.values?.temperatureAvg}}</span>
+            </div>
+        </div>
+        <div class="content">
+            <wf-minutely [items]="current.context.data.timelines.minutely"></wf-minutely>
+            <div *ngIf="current.matches('loading')">
+                <strong>Please wait...</strong>
+            </div>
+            <div *ngIf="current.matches('error')">
+                <strong>Something goes wrong.</strong>
+            </div>
+        </div>
+    </div>
+</div>

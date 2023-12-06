@@ -1,0 +1,47 @@
+.weather_container {
+    width: 100%;
+    height: 100%;
+    .wrapper {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        .sidebar {
+            padding: 15px;
+            width: 350px;
+            display: flex;
+            min-height: 600px;
+            background: rgba(25, 55, 92, 0.75);
+            flex-direction: column;
+            .city {
+                color: white;
+                font-size: 18px;
+            }
+            .current_weather {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0px 60px;
+                display: flex;
+                .degrees {
+                    font-size: 50px;
+                    color: #fff;
+                    margin-top: 9px;
+                    margin-left: 20px;
+                    position: relative;
+                    &::after {
+                        content: "°";
+                        display: block;
+                        position: absolute;
+                        top: 0px;
+                        right: -20px;
+                    }
+                }
+            }
+        }
+        .content {
+            flex: 1;
+            padding: 10px;
+            background: white;
+        }
+    }
+}

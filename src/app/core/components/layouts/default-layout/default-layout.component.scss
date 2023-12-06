@@ -1,0 +1,22 @@
+.container {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    background-image: url('../../../../../assets/images/sun3.jpg');
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+    .main_navigation {
+        padding: 20px;
+        background-color: green;
+        color: white;
+        text-align: center;
+        font-size: 30px;
+        background: rgba(25,55,92,.75);
+    }
+    .main_content {
+        flex: 1;
+    }
+}
